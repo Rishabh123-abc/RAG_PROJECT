@@ -1,6 +1,7 @@
 
 import streamlit as st
 from dotenv import load_dotenv
+import os
 
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -8,7 +9,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
-
+api_key = os.environ['GROQ_API_KEY']
 load_dotenv()
 
 st.set_page_config(
@@ -138,7 +139,7 @@ if st.session_state.vectorstore is not None:
 
                     # LLM
                     llm = ChatGroq(
-                        model="qwen/qwen3.8-27b"
+                        model="qwen/qwen3.8-27b",api_key=api_key
                     )
 
                     # Prompt template
