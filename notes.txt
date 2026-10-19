@@ -1,0 +1,6 @@
+Text: "Hello, World!"
+Numbers: "1234567890"
+Date: "2025-02-11"
+Email: "example@example.com"
+HTML: <p>This is a paragraph.</p>
+These examples can be used to create a simple text file with various types of content. 
